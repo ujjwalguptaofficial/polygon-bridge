@@ -1,5 +1,5 @@
 import { Widget } from "@maticnetwork/wallet-widget";
-import "flexstyle";
+// import "flexstyle";
 let savedNetwork = localStorage.getItem("network");
 savedNetwork = savedNetwork ? savedNetwork as any : "mainnet"
 const el = document.querySelector('#selectNetwork') as HTMLSelectElement;
@@ -8,13 +8,20 @@ el.addEventListener("change", (e) => {
     location.reload();
 })
 el.value = savedNetwork;
-const widget = new Widget({
-    appName: "test",
-    autoShowTime: 1,
-    position: "bottom-right",
-    target: '#widget',
-    network: savedNetwork as any
-})
 
-widget.create();
+async function createWidget() {
+    const widget = new Widget({
+        appName: "test",
+        // autoShowTime: 100,
+        position: "bottom-right",
+        // target: '#widget',
+        network: savedNetwork as any,
+        closable: false
+    })
+    await widget.create();
+    widget.show();
+}
+
+createWidget();
+
 
