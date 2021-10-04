@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ujjwalguptaofficial/polygon-bridge#readme",
   "dependencies": {
-    "@maticnetwork/wallet-widget": "^1.0.10",
+    "@maticnetwork/wallet-widget": "^1.1.0",
     "flexstyle": "^1.0.3"
   },
   "devDependencies": {
